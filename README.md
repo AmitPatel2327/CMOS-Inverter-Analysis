@@ -38,3 +38,12 @@ So to overcome these issues a combination of both NMOS & PMOS is used i.e. CMOS 
 Since, PMOS is a Strong 1, we put it between VDD and Vout and NMOS being a STRONG 0, it is placed between Vout and GND. This way, either can act as a load to the other transistor.  
 This is referred to as Complementary Metal Oxide Semiconductor(CMOS) Configuration and representing the simplest CMOS circuit known as the CMOS Inverter.
 
+## Schematic, Simulation & Layout
+### Tools Used : 
+- Xschem - Schematic Capture
+- NGSPICE - Spice Netlist Simulation
+- Magic - Layout & DRC
+
+## Simulation 
+
+

@@ -44,20 +44,22 @@ This is referred to as Complementary Metal Oxide Semiconductor(CMOS) Configurati
 - NGSPICE - Spice Netlist Simulation
 - Magic - Layout & DRC
 
-## Simulation 
+## **Schematic** 
 ![Inverter Diagram](images/INV_Sch_sym.png)
 <p align="center">
   Figure-3 : Inverter Symbol 
-</p>  
+</p><br>
 
 Here, in this schematic, a symbol is also created and named as NOT for further uses. The Design Parameters are as follows:  
 ![Inverter Diagram](images/Design_para.png)
 <p align="center">
   Figure-4 : Design Parameters of NMOS & PMOS
-</p>  
+</p><br>  
 
-### DC Analysis  
-DC analyis is done to plot the voltage transfer characteristics (VTC). In this Vin is swept from Low to High voltage to determine the working of circuit or we can say plot of Vout. The following plot is observed when simulated:
+## **Simulation**
+## DC Analysis  
+DC analysis is a type of simulation that calculates the steady-state voltages and currents in a circuit when all inputs are constant.
+It is done to plot the voltage transfer characteristics (VTC). In this Vin is swept from Low to High voltage to determine the working of circuit or we can say plot of Vout. The following plot is observed when simulated:
 
 ![Inverter Diagram](images/VTC.png)
 <p align="center">
@@ -76,12 +78,12 @@ The trip point is primarily set by the relative strengths (W/L ratios). So, now 
   <img src="images/tp_ratio4.png" alt="Image 2" width="45%"/>
 </p>  
 <p align="center">
-  Figure-6(a) : wp/wn=3 , vm=0.8930V   &    Figure 6(b) : wp/wn = 4 , vm=0.905
+  Figure-6(a) : w<sub>p</sub>/w<sub>n</sub> , vm=0.8930V   &    Figure 6(b) : w<sub>p</sub>/w<sub>n</sub> = 4 , vm=0.905
 </p>  
 
-So , we can say that as PMOS gets stronger (or wp/wn increases) then trip point move towards its ideal value i.e. vdd/2 .  
+So , we can say that as PMOS gets stronger (or w<sub>p</sub>/w<sub>n</sub> increases) then trip point move towards its ideal value i.e. vdd/2 .  
 
-## Noise Margin Analysis
+### Noise Margin Analysis
 It is the margin (or range) for the noise to cause a fluctuation in input but there is no change in the output.  
 Terms related to Noise margin:
 - V<sub>IL</sub> - Maximum input voltage that can be considered as logic LOW (0).
@@ -111,4 +113,13 @@ So, the two values of Noise Margin (or Noise Immunity):
 - NM<sub>L</sub>(Noise Margin for LOW) =  V<sub>IL</sub> - V<sub>OL</sub> = 0.7835 - 0.0690 = 0.7145V
 - NM<sub>H</sub>(Noise Margin for HIGH) =  V<sub>OH</sub> - V<sub>IH</sub> = 1.7464 - 1.0334 = 0.7130V
 
-Generally, for w<sub>p</sub>/w<sub>n</sub> = 3.5 or 4 ,Noise Margin is nearly symmetrical i.e. NM<sub>L</sub> = NM<sub>H</sub> .
+Generally, for w<sub>p</sub>/w<sub>n</sub> = 3.5 or 4 ,Noise Margin is nearly symmetrical i.e. NM<sub>L</sub> = NM<sub>H</sub> . 
+
+## Transient Analysis  
+Transient analysis is a type of simulation used to study how voltages and currents in a circuit change over time, especially during the switching or response to a change in input.  
+### Delay Analysis
+In this section, Four terms are widely used:  
+- T<sub>PLH</sub> = Time difference between 50% of the input and 50% of the output when output goes from low to high. 
+- T<sub>PHL</sub> = Time difference between 50% of the input and 50% of the output when output goes from low to high.
+- T<sub>r</sub> = time taken by output to reach 90% from 10% of its max value.
+- T<sub>f</sub> = time taken by output to reach 10% from 90% of its max value.

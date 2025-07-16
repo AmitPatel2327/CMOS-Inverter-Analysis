@@ -18,9 +18,23 @@ Because of **Strong 0** & **Weak 1** .
 - **Strong 0** - Whenever NMOS is on , it provides a conducting path to the capacitor to discharge fully to zero through it and Hence providing a strong pull down network.  
 - **Weak 1** - It cannot pass the full V<sub>DD</sub> due to the threshold voltage drop. As the output voltage approaches V<sub>DD</sub>, the gate-to-source voltage V<sub>GS</sub> drops below the threshold, causing the NMOS to turn off before reaching a full logic high.
 
+![Inverter Diagram](images/NMOS_as_inv.png)
+<p align="center">
+  Figure-1 : NMOS as Inverter
+</p>
+
 ### Why Not only PMOS ?  
 Because of **Strong 1** & **Weak 0** . 
 Just opposite to NMOS. 
-- Provides a full charging path to the capacitor , resulting to strong 1 and a strong pull up network. but for logic 0, limitation of threshold voltage restricts the output to a value greater than zero. Therfore can't provide strong pul down network.  
+- Provides a full charging path to the capacitor , resulting to strong 1 and a strong pull up network. but for logic 0, limitation of threshold voltage restricts the output to a value greater than zero. Therfore can't provide strong pul down network.
 
+![Inverter Diagram](images/PMOS_as_inv.png)
+<p align="center">
+  Figure-2 : PMOS as Inverter
+</p>  
+
+## Why CMOS ?
 So to overcome these issues a combination of both NMOS & PMOS is used i.e. CMOS , where **NMOS** circuitry acts as **Pull Down N/W** and **PMOS** acts as **Pull Up N/W**.  
+Since, PMOS is a Strong 1, we put it between VDD and Vout and NMOS being a STRONG 0, it is placed between Vout and GND. This way, either can act as a load to the other transistor.  
+This is referred to as Complementary Metal Oxide Semiconductor(CMOS) Configuration and representing the simplest CMOS circuit known as the CMOS Inverter.
+

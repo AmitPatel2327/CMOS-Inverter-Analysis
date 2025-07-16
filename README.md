@@ -64,8 +64,13 @@ DC analyis is done to plot the voltage transfer characteristics (VTC). In this V
   Figure-3 : Voltage Transfer Characteristics (VTC) 
 </p>  
 
-#### Trip Point (or Switching Threshold) of an Inverter  
-The trip point of a CMOS inverter is the input voltage at which the output voltage switches from HIGH to LOW (or vice versa) — i.e., when both NMOS and PMOS are conducting equally.
-We can also denote trip point by input voltage at which vin = vout.  
+#### **Trip Point (or Switching Threshold) of an Inverter**  
+- The trip point of a CMOS inverter is the input voltage at which the output voltage switches from HIGH to LOW (or vice versa) — i.e., when both NMOS and PMOS are conducting equally.We can also denote trip point by input voltage at which vin = vout.
+  
 So, in the above image we can see that trip point(vm) = 0.8698V. For ideal cases , it should be around 0.9V i.e. vdd/2.  
-The trip point is primarily set by the relative strengths (W/L ratios). So
+The trip point is primarily set by the relative strengths (W/L ratios). So, now analyzing the effects of (W/L) ratio of PMOS & NMOS on Trip Point.  
+<p align="center">
+  <img src="images/image1.png" alt="Image 1" width="45%" style="margin-right: 10px;"/>
+  <img src="images/image2.png" alt="Image 2" width="45%"/>
+</p>
+

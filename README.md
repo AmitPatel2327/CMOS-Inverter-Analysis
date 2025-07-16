@@ -122,4 +122,28 @@ In this section, Four terms are widely used:
 - T<sub>PLH</sub> = Time difference between 50% of the input and 50% of the output when output goes from low to high. 
 - T<sub>PHL</sub> = Time difference between 50% of the input and 50% of the output when output goes from low to high.
 - T<sub>r</sub> = time taken by output to reach 90% from 10% of its max value.
-- T<sub>f</sub> = time taken by output to reach 10% from 90% of its max value.
+- T<sub>f</sub> = time taken by output to reach 10% from 90% of its max value.  <br>  
+![Inverter Diagram](images/delay.jpg)
+<p align="center">
+  Figure-9 : Delays in an Inverter
+</p><br>
+
+![Inverter Diagram](images/tplh_tphl.png)
+<p align="center">
+  Figure-10 : Propagation Delay 
+</p><br>
+With reference to above diagram, we can estimate that T<sub>PLH</sub> = 0.4594 nS & T<sub>PHL</sub> = 0.3272 nS . But this propagation delay depends on the input applied , which can be a clock input or input from any other inverter. So this delay changes, if there is any change in the input.
+Now, what happens to propagation delay if the rise and fall time of the input V<sub>in</sub> changes.  
+
+![Inverter Diagram](images/tplh_tphl_2.png)
+<p align="center">
+  Figure-11 : Propagation Delay When V<sub>in</sub> is changed
+</p><br>
+Above Picture clearly states that T<sub>PLH</sub> & T<sub>PHL</sub> changes as there is some change in input.
+T<sub>PLH</sub> = 0.4594 nS & T<sub>PHL</sub> = 0.3272 nS . As a result increasing the rise and fall time of input increases the propagation delay.
+
+Whenever there is a need of isolated analysis of inverter then we go with rise & fall time of output waveform instead of propagation delay.  <br>  
+![Inverter Diagram](images/tr_tf.png)
+<p align="center">
+  Figure-11 : Rise Time & Fall Time
+</p><br>

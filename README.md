@@ -45,5 +45,12 @@ This is referred to as Complementary Metal Oxide Semiconductor(CMOS) Configurati
 - Magic - Layout & DRC
 
 ## Simulation 
+![Inverter Diagram](images/INV_Sch_sym.png)
+<p align="center">
+  Figure-3 : Inverter Symbol 
+</p> 
 
+Here, in this schematic, a symbol is also created and named as NOT for further uses. The Design Parameters are as follows:
 
+### DC Analysis
+DC analyis is done to plot the voltage transfer characteristics (VTC). In this Vin is swept from Low to High voltage to determine the working of circuit or we can say plot of Vout. The following plot is observed when simulated.   

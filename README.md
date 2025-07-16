@@ -48,12 +48,12 @@ This is referred to as Complementary Metal Oxide Semiconductor(CMOS) Configurati
 ![Inverter Diagram](images/INV_Sch_sym.png)
 <p align="center">
   Figure-3 : Inverter Symbol 
-</p> 
+</p>  
 
 Here, in this schematic, a symbol is also created and named as NOT for further uses. The Design Parameters are as follows:  
 ![Inverter Diagram](images/Design_para.png)
 <p align="center">
-  Figure-3 : Design Parameters of NMOS & PMOS
+  Figure-4 : Design Parameters of NMOS & PMOS
 </p>  
 
 ### DC Analysis  
@@ -61,16 +61,32 @@ DC analyis is done to plot the voltage transfer characteristics (VTC). In this V
 
 ![Inverter Diagram](images/VTC.png)
 <p align="center">
-  Figure-3 : Voltage Transfer Characteristics (VTC) 
-</p>  
+  Figure-5 : Voltage Transfer Characteristics (VTC) 
+</p>    
+
 
 #### **Trip Point (or Switching Threshold) of an Inverter**  
 - The trip point of a CMOS inverter is the input voltage at which the output voltage switches from HIGH to LOW (or vice versa) — i.e., when both NMOS and PMOS are conducting equally.We can also denote trip point by input voltage at which vin = vout.
   
 So, in the above image we can see that trip point(vm) = 0.8698V. For ideal cases , it should be around 0.9V i.e. vdd/2.  
 The trip point is primarily set by the relative strengths (W/L ratios). So, now analyzing the effects of (W/L) ratio of PMOS & NMOS on Trip Point.  
+
 <p align="center">
-  <img src="images/image1.png" alt="Image 1" width="45%" style="margin-right: 10px;"/>
-  <img src="images/image2.png" alt="Image 2" width="45%"/>
-</p>
+  <img src="images/tp_ratio3.png" alt="Image 1" width="45%" style="margin-right: 10px;"/>
+  <img src="images/tp_ratio4.png" alt="Image 2" width="45%"/>
+</p>  
+<p align="center">
+  Figure-6(a) : wp/wn=3 , vm=0.8930V   &    Figure 6(b) : wp/wn = 4 , vm=0.905
+</p>  
+
+So , we can say that as PMOS gets stronger (or wp/wn increases) then trip point move towards its ideal value i.e. vdd/2 .  
+
+## Noise Margin Analysis
+It is the margin (or range) for the noise to cause a fluctuation in input but there is no change in the output.  
+Terms related to Noise margin:
+- V<sub>IL</sub> - Maximum input voltage that can be considered as logic LOW (0).
+- V<sub>IH</sub> - Minimum input voltage that can be considered as logic HIGH (1).
+- V<sub>OH</sub> - Minimum voltage the inverter outputs when trying to represent logic HIGH (1).
+- V<sub>OL</sub> - Maximum voltage the inverter outputs when trying to represent logic LOW (0).
+
 

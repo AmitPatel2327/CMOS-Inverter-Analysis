@@ -87,6 +87,28 @@ Terms related to Noise margin:
 - V<sub>IL</sub> - Maximum input voltage that can be considered as logic LOW (0).
 - V<sub>IH</sub> - Minimum input voltage that can be considered as logic HIGH (1).
 - V<sub>OH</sub> - Minimum voltage the inverter outputs when trying to represent logic HIGH (1).
-- V<sub>OL</sub> - Maximum voltage the inverter outputs when trying to represent logic LOW (0).
+- V<sub>OL</sub> - Maximum voltage the inverter outputs when trying to represent logic LOW (0).  
+
+![Inverter Diagram](images/noise_margin.png)
+<p align="center">
+  Figure-7 : Noise Margin Analysis
+</p><br>  
 
 
+![Inverter Diagram](images/voh_vol.png)
+<p align="center">
+  Figure-8 : Finding V<sub>OH</sub> and V<sub>OL</sub> 
+</p><br>
+
+Based on the above two figures, we can estimate that :
+
+- V<sub>IL</sub> = 0.7835V
+- V<sub>IH</sub> = 1.0334V
+- V<sub>OH</sub> = 1.7464V
+- V<sub>OL</sub> = 0.0690V
+
+So, the two values of Noise Margin (or Noise Immunity):
+- NM<sub>L</sub>(Noise Margin for LOW) =  V<sub>IL</sub> - V<sub>OL</sub> = 0.7835 - 0.0690 = 0.7145V
+- NM<sub>H</sub>(Noise Margin for HIGH) =  V<sub>OH</sub> - V<sub>IH</sub> = 1.7464 - 1.0334 = 0.7130V
+
+Generally, for w<sub>p</sub>/w<sub>n</sub> = 3.5 or 4 ,Noise Margin is nearly symmetrical i.e. NM<sub>L</sub> = NM<sub>H</sub> .

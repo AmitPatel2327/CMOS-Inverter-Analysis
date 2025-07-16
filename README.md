@@ -145,5 +145,5 @@ T<sub>PLH</sub> = 0.4594 nS & T<sub>PHL</sub> = 0.3272 nS . As a result increasi
 Whenever there is a need of isolated analysis of inverter then we go with rise & fall time of output waveform instead of propagation delay.  <br>  
 ![Inverter Diagram](images/tr_tf.png)
 <p align="center">
-  Figure-11 : Rise Time & Fall Time
+  Figure-12 : Rise Time & Fall Time
 </p><br>

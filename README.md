@@ -212,11 +212,12 @@ Now let's see what happens to power consumption when C<sub>L</sub> is reduced to
 ![Inverter Diagram](images/power_1f.png)
 <p align="center">
   Figure-16 : Power calculation at C<sub>L</sub>=1 femtoF
-</p><br>  
-Power Consumed = 0.78886 fW
-Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relatively, lesser power consumption proper layouting of inverter should be done.  
+</p>  
 
-3. **Less Switching Transitions** - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.
+- Power Consumed = 0.78886 fW  
+- Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relatively, lesser power consumption proper layouting of inverter should be done.  
+
+3. **Reducing the No. of Switching Transitions** - Device architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.
 
 ## Layout  
 

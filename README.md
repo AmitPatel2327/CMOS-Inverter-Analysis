@@ -203,8 +203,8 @@ Power delivered by the source when C<sub>L</sub>=4 femtoF is given below.
 So, in this case Power = 12.6450 pW for single switching cycle. If more switching is there in the ckt then power consumption increases.
 
 **Steps to Reduce Power Consumption**  
-1. Reducing the Power Supply - As we can analyze that in calculation of power, supply voltage is directly multiplied to current. So, if supply reduces then power consumption also reduces.  
-2. Decreasing the Load capacitance - In earlier case, C<sub>L</sub>=4 femtoF which gives a power consumption of 12.6450 pW for one switching cycle.
+1. **Reducing the Power Supply** - As we can analyze that in calculation of power, supply voltage is directly multiplied to current. So, if supply reduces then power consumption also reduces.  
+2. **Decreasing the Load capacitance** - In earlier case, C<sub>L</sub>=4 femtoF which gives a power consumption of 12.6450 pW for one switching cycle.
 Now let's see what happens to power consumption when C<sub>L</sub> is reduced to 1 femtoF.
 
 ![Inverter Diagram](images/power_1f.png)
@@ -212,6 +212,6 @@ Now let's see what happens to power consumption when C<sub>L</sub> is reduced to
   Figure-16 : Power calculation at C<sub>L</sub>=1 femtoF
 </p><br>  
 Power Consumed = 0.78886 fW
-Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relativly, lesser power consumption proper layouting of inverter shhould be done.  
+Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relatively, lesser power consumption proper layouting of inverter should be done.  
 
-3. Less Switching Transitions - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.
+3. **Less Switching Transitions** - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.

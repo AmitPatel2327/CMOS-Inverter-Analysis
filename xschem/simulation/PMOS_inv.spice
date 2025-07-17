@@ -1,0 +1,18 @@
+** sch_path: /home/ap23_27/CMOS_INV/PMOS_inv.sch
+**.subckt PMOS_inv
+V1 vin GND pulse(0 5.0 0 500ps 500ps 4ns 10ns 5)
+V2 vdd GND 5
+C1 vout 0 4f m=1
+XM1 vout vin vdd vdd sky130_fd_pr__pfet_20v0 L=0.5 W=60 m=1
+XM2 GND GND vout vdd sky130_fd_pr__pfet_20v0 L=0.5 W=60 m=1
+**** begin user architecture code
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.tran 100ps 30ns
+.save all
+.end
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

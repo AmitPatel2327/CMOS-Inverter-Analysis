@@ -68,9 +68,9 @@ It is done to plot the voltage transfer characteristics (VTC). In this Vin is sw
 
 
 #### **Trip Point (or Switching Threshold) of an Inverter**  
-- The trip point of a CMOS inverter is the input voltage at which the output voltage switches from HIGH to LOW (or vice versa) — i.e., when both NMOS and PMOS are conducting equally.We can also denote trip point by input voltage at which vin = vout.
+- The trip point of a CMOS inverter is the input voltage at which the output voltage switches from HIGH to LOW (or vice versa) — i.e., when both NMOS and PMOS are conducting equally.We can also denote trip point by input voltage at which v<sub>in</sub> = vout.
   
-So, in the above image we can see that trip point(vm) = 0.8698V. For ideal cases , it should be around 0.9V i.e. vdd/2.  
+So, in the above image we can see that trip point(v<sub>m</sub>) = 0.8698V. For ideal cases , it should be around 0.9V i.e. vdd/2.  
 The trip point is primarily set by the relative strengths (W/L ratios). So, now analyzing the effects of (W/L) ratio of PMOS & NMOS on Trip Point.  
 
 <p align="center">
@@ -147,3 +147,5 @@ Whenever there is a need of isolated analysis of inverter then we go with rise &
 <p align="center">
   Figure-12 : Rise Time & Fall Time
 </p><br>
+Rise time (T<sub>r</sub>sub) = 0.5485 nS
+Fall time (T<sub>f</sub>sub) = 0.6964 nS

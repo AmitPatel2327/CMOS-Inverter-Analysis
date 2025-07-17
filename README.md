@@ -215,3 +215,15 @@ Power Consumed = 0.78886 fW
 Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relatively, lesser power consumption proper layouting of inverter should be done.  
 
 3. **Less Switching Transitions** - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.
+
+## Layout  
+For layout Magic VLSI tool is used.
+Steps Of Layout:
+1. **Layout of PMOS**
+- Generally, the whole area is pwell (p-type), but for a PMOS substrate/body is N-type. So, firstly selecting an area and then paint with nwell.
+- A smaller area is selected and painted with pdiff for drain and source.
+- A polysilicon gate is created over the pdiff to separate drain and source.
+- Local interconnect (li) layer is placed over the drain terminal for short connections, followed by a pdc layer (p diffusion contact) for connection between P diffusion layer and local interconnect. Similar thing is copied towards source layer.
+
+2. **Layout of NMOS**
+  

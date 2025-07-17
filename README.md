@@ -132,7 +132,7 @@ In this section, Four terms are widely used:
 <p align="center">
   Figure-10 : Propagation Delay 
 </p><br>
-With reference to above diagram, we can estimate that T<sub>PLH</sub> = 0.4594 nS & T<sub>PHL</sub> = 0.3272 nS . But this propagation delay depends on the input applied , which can be a clock input or input from any other inverter. So this delay changes, if there is any change in the input.
+With reference to above diagram, we can estimate that T<sub>PLH</sub> = 0.4594 ns & T<sub>PHL</sub> = 0.3272 ns . But this propagation delay depends on the input applied , which can be a clock input or input from any other inverter. So this delay changes, if there is any change in the input.
 Now, what happens to propagation delay if the rise and fall time of the input V<sub>in</sub> changes.  
 
 ![Inverter Diagram](images/tplh_tphl_2.png)
@@ -140,12 +140,48 @@ Now, what happens to propagation delay if the rise and fall time of the input V<
   Figure-11 : Propagation Delay When V<sub>in</sub> is changed
 </p><br>
 Above Picture clearly states that T<sub>PLH</sub> & T<sub>PHL</sub> changes as there is some change in input.
-T<sub>PLH</sub> = 0.4594 nS & T<sub>PHL</sub> = 0.3272 nS . As a result increasing the rise and fall time of input increases the propagation delay.
+T<sub>PLH</sub> = 0.4594 ns & T<sub>PHL</sub> = 0.3272 ns . As a result increasing the rise and fall time of input increases the propagation delay.  
 
-Whenever there is a need of isolated analysis of inverter then we go with rise & fall time of output waveform instead of propagation delay.  <br>  
+But whenever there is a need of isolated analysis of inverter then we go with rise & fall time of output waveform instead of propagation delay.  <br>  
 ![Inverter Diagram](images/tr_tf.png)
 <p align="center">
   Figure-12 : Rise Time & Fall Time
 </p><br>
-Rise time (T<sub>r</sub>sub) = 0.5485 nS
-Fall time (T<sub>f</sub>sub) = 0.6964 nS
+Rise time (T<sub>r</sub>) = 0.5485 ns
+Fall time (T<sub>f</sub>) = 0.6964 ns  
+
+### How this delay related to some other parameters:
+1. **UNLOADED DELAY (C<sub>L)</sub>=0**  
+Let's analyse unloaded delay first. In earlier simulation we have a load capacitance, which is generally present in a ckt, But in this case C<sub>L</sub>=0 (Unloaded Delay). Let's see when changes reflects in delay.<br>
+![Inverter Diagram](images/ud_vdd=1.8.png)
+<p align="center">
+  Figure-13 : Unloaded delay When V<sub>dd</sub>sub = 1.0V
+</p><br>  
+
+Rise time (T<sub>r</sub>) = 37.8700 ps
+Fall time (T<sub>f</sub>) = 24.1400 ps
+Here, we can see a drastic change in the delay, as the unloaded delay"<<"loaded delay. It has changed from nanosec to picosec.
+
+2. **Changes in Power Supply**  
+During initial analysis, we set the power supply to max rated voltage of inverter i.e. V<sub>dd</sub>=1.8V. But for this case set it to 1.0V. How the delay changes is mentioned below.<br>
+![Inverter Diagram](images/ud_vdd=1.0.png)
+<p align="center">
+  Figure-13 : Unloaded delay When V<sub>dd</sub>sub is changed to 1.0V
+</p>  
+
+Rise time (T<sub>r</sub>) = 54.5400 ps  
+Fall time (T<sub>f</sub>) = 39.5700 ps  
+So, from above data we can conclude that as power supply increases, delay decreases (Speed of ckt increases). But increasing power supply also increases power dissipation. Hence, Delay and power dissipation are inversely related.  
+
+3. Changes in Width of PMOS & NMOS
+If width of PMOS & NMOS are changed then delay also changes. But this change is very minute in unloaded delay. As size increases Resistance of MOS decreases but at the same time internal capacitances increases which cancels out of size change. But this change is considerbale in case of loaded delay.
+<br>
+
+### Power Analysis
+Mainly Three types of power comes into picture:
+1. Dynamic Power - Occurs during switching (when the output transitions between logic levels). It isCaused by charging and discharging of load capacitance.
+2. Short-Circuit Power - Occurs when both PMOS and NMOS are momentarily ON during input transition. Creates a direct path from V<sub>DD</sub> to GND.
+3. Static Power - Consumed when the inverter is not switching (i.e., in steady state). Due to non-idealities in MOSFETs like Subthreshold leakage (current flows even when transistor is off), Gate oxide leakage etc.
+
+- As gate terminal is isolated from ckt via Oxide layer, so it does not draw any current(or very minute) from input. Hence, No power delivered by the input source. All the power is delivered by the V<sub>DD</sub> source.
+- For Power analysis only V<sub>DD</sub> voltage and its current i.e. V<sub>DD</sub>#branch is considered.

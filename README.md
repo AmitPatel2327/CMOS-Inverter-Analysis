@@ -151,7 +151,7 @@ Rise time (T<sub>r</sub>) = 0.5485 ns
 Fall time (T<sub>f</sub>) = 0.6964 ns  
 
 ### How this delay related to some other parameters:
-1. **UNLOADED DELAY (C<sub>L)</sub>=0**  
+1. **UNLOADED DELAY (C<sub>L</sub>)=0**  
 Let's analyse unloaded delay first. In earlier simulation we have a load capacitance, which is generally present in a ckt, But in this case C<sub>L</sub>=0 (Unloaded Delay). Let's see when changes reflects in delay.<br>
 ![Inverter Diagram](images/ud_vdd=1.8.png)
 <p align="center">
@@ -166,7 +166,7 @@ Here, we can see a drastic change in the delay, as the unloaded delay"<<"loaded 
 During initial analysis, we set the power supply to max rated voltage of inverter i.e. V<sub>dd</sub>=1.8V. But for this case set it to 1.0V. How the delay changes is mentioned below.<br>
 ![Inverter Diagram](images/ud_vdd=1.0.png)
 <p align="center">
-  Figure-13 : Unloaded delay When V<sub>dd</sub>sub is changed to 1.0V
+  Figure-14 : Unloaded delay When V<sub>dd</sub>sub is changed to 1.0V
 </p>  
 
 Rise time (T<sub>r</sub>) = 54.5400 ps  
@@ -185,3 +185,19 @@ Mainly Three types of power comes into picture:
 
 - As gate terminal is isolated from ckt via Oxide layer, so it does not draw any current(or very minute) from input. Hence, No power delivered by the input source. All the power is delivered by the V<sub>DD</sub> source.
 - For Power analysis only V<sub>DD</sub> voltage and its current i.e. V<sub>DD</sub>#branch is considered.
+
+The plot of output voltage (V<sub>out</sub>) and current(vdd#branch or curr_10000) through supply is as follows:  
+
+![Inverter Diagram](images/curr_vdd=1.0.png)
+<p align="center">
+  Figure-15 : Current and output Voltage(V<sub>out</sub>) 
+</p><br>  
+
+Power delivered by the source when C<sub>L</sub>=4 femtoF is given below.  
+
+![Inverter Diagram](images/power_4f=1.0.png)
+<p align="center">
+  Figure-15 : Power calculation at C<sub>L</sub>=4 femtoF
+</p><br>  
+
+

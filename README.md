@@ -222,8 +222,12 @@ Here, we can see that power consumption reduces drastically as load capacitance 
 
 ![Inverter Diagram](images/inv_step.png)
   
-For layout Magic VLSI tool is used.  
-**Steps Of Layout:**  
+The layout design was carried out using the Magic tool integrated with the Skywater SKY130 Process Design Kit (PDK).  
+
+A PDK (Process Design Kit) is a comprehensive collection of files, models, and rules provided by a semiconductor foundry. It serves as a bridge between the design and fabrication processes in VLSI.
+
+### **Steps Of Layout:**  
+
 **1. Layout of PMOS**
 - Generally, the whole area is pwell (p-type), but for a PMOS substrate/body is N-type. So, firstly selecting an area and then paint with nwell.
 - A smaller area is selected and painted with pdiff for drain and source.

@@ -223,7 +223,26 @@ Steps Of Layout:
 - Generally, the whole area is pwell (p-type), but for a PMOS substrate/body is N-type. So, firstly selecting an area and then paint with nwell.
 - A smaller area is selected and painted with pdiff for drain and source.
 - A polysilicon gate is created over the pdiff to separate drain and source.
-- Local interconnect (li) layer is placed over the drain terminal for short connections, followed by a pdc layer (p diffusion contact) for connection between P diffusion layer and local interconnect. Similar thing is copied towards source layer.
+- Local interconnect (li) layer is placed over the drain terminal for short connections, followed by a pdiffc layer (p diffusion contact) for connection between P diffusion layer and local interconnect. Similar thing is copied towards source layer.
 
 2. **Layout of NMOS**
-  
+-  As the material is already P-type so no need of Pwell here.
+-  Next, all the steps will be similar to the layout of PMOS. Just p will be replaced with n.
+
+3. **Ground & V<sub>DD</sub> Connections**
+- For GND and V<sub>DD</sub> connection we use P & N type substrate respectively.
+- let's start with V<sub>DD</sub> connection, paint a selected area with N-type substrate over nwell.
+- Now, place the li layer over it, followed by N-substrate contact for connection between N-substrate layer and local interconnect layer (li).
+- In the similar fashion, GND connection is made just replacing the N with P.
+
+4. **Interconnections**
+- Connect the V<sub>DD</sub> with Source of PMOS and GND with Source of NMOS.
+- Connect the Drain of Both PMOS & NMOS together.
+- Extend the polysilicon layer and cover it with li layer, followed by polysilicon contact.  
+
+5. **Labels**
+- labels each connect with its name such as V<sub>DD</sub>, GND, V<sub>IN</sub>, V<sub>out</sub>.
+
+- Now extract the layout file to a spice file.
+
+- **It is mandatory to clear DRC(Design Rule Check) at each step.**

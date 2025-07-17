@@ -155,7 +155,7 @@ Fall time (T<sub>f</sub>) = 0.6964 ns
 Let's analyse unloaded delay first. In earlier simulation we have a load capacitance, which is generally present in a ckt, But in this case C<sub>L</sub>=0 (Unloaded Delay). Let's see when changes reflects in delay.<br>
 ![Inverter Diagram](images/ud_vdd=1.8.png)
 <p align="center">
-  Figure-13 : Unloaded delay When V<sub>dd</sub>sub = 1.0V
+  Figure-13 : Unloaded delay When V<sub>dd</sub> = 1.8V
 </p><br>  
 
 Rise time (T<sub>r</sub>) = 37.8700 ps
@@ -166,7 +166,7 @@ Here, we can see a drastic change in the delay, as the unloaded delay"<<"loaded 
 During initial analysis, we set the power supply to max rated voltage of inverter i.e. V<sub>dd</sub>=1.8V. But for this case set it to 1.0V. How the delay changes is mentioned below.<br>
 ![Inverter Diagram](images/ud_vdd=1.0.png)
 <p align="center">
-  Figure-14 : Unloaded delay When V<sub>dd</sub>sub is changed to 1.0V
+  Figure-14 : Unloaded delay When V<sub>dd</sub> is changed to 1.0V
 </p>  
 
 Rise time (T<sub>r</sub>) = 54.5400 ps  
@@ -188,16 +188,30 @@ Mainly Three types of power comes into picture:
 
 The plot of output voltage (V<sub>out</sub>) and current(vdd#branch or curr_10000) through supply is as follows:  
 
-![Inverter Diagram](images/curr_vdd=1.0.png)
+![Inverter Diagram](images/curr_vdd.png)
 <p align="center">
   Figure-15 : Current and output Voltage(V<sub>out</sub>) 
 </p><br>  
 
 Power delivered by the source when C<sub>L</sub>=4 femtoF is given below.  
 
-![Inverter Diagram](images/power_4f=1.0.png)
+![Inverter Diagram](images/power_4f.png)
 <p align="center">
   Figure-15 : Power calculation at C<sub>L</sub>=4 femtoF
 </p><br>  
 
+So, in this case Power = 12.6450 pW for single switching cycle. If more switching is there in the ckt then power consumption increases.
 
+**Steps to Reduce Power Consumption**  
+1. Reducing the Power Supply - As we can analyze that in calculation of power, supply voltage is directly multiplied to current. So, if supply reduces then power consumption also reduces.  
+2. Decreasing the Load capacitance - In earlier case, C<sub>L</sub>=4 femtoF which gives a power consumption of 12.6450 pW for one switching cycle.
+Now let's see what happens to power consumption when C<sub>L</sub> is reduced to 1 femtoF.
+
+![Inverter Diagram](images/power_1f.png)
+<p align="center">
+  Figure-16 : Power calculation at C<sub>L</sub>=1 femtoF
+</p><br>  
+Power Consumed = 0.78886 fW
+Here, we can see that power consumption reduces drastically as load capacitance decreases. This load capacitance depends on the layout of inverter. So, for relativly, lesser power consumption proper layouting of inverter shhould be done.  
+
+3. Less Switching Transitions - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.

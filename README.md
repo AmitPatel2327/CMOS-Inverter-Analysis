@@ -153,6 +153,7 @@ Fall time (T<sub>f</sub>) = 0.6964 ns
 ### How this delay related to some other parameters:
 1. **UNLOADED DELAY (C<sub>L</sub>)=0**  
 Let's analyse unloaded delay first. In earlier simulation we have a load capacitance, which is generally present in a ckt, But in this case C<sub>L</sub>=0 (Unloaded Delay). Let's see when changes reflects in delay.<br>
+
 ![Inverter Diagram](images/ud_vdd=1.8.png)
 <p align="center">
   Figure-13 : Unloaded delay When V<sub>dd</sub> = 1.8V
@@ -163,7 +164,8 @@ Fall time (T<sub>f</sub>) = 24.1400 ps
 Here, we can see a drastic change in the delay, as the unloaded delay"<<"loaded delay. It has changed from nanosec to picosec.
 
 2. **Changes in Power Supply**  
-During initial analysis, we set the power supply to max rated voltage of inverter i.e. V<sub>dd</sub>=1.8V. But for this case set it to 1.0V. How the delay changes is mentioned below.<br>
+During initial analysis, we set the power supply to max rated voltage of inverter i.e. V<sub>dd</sub>=1.8V. But for this case set it to 1.0V. How the delay changes is mentioned below.
+
 ![Inverter Diagram](images/ud_vdd=1.0.png)
 <p align="center">
   Figure-14 : Unloaded delay When V<sub>dd</sub> is changed to 1.0V
@@ -173,7 +175,7 @@ Rise time (T<sub>r</sub>) = 54.5400 ps
 Fall time (T<sub>f</sub>) = 39.5700 ps  
 So, from above data we can conclude that as power supply increases, delay decreases (Speed of ckt increases). But increasing power supply also increases power dissipation. Hence, Delay and power dissipation are inversely related.  
 
-3. Changes in Width of PMOS & NMOS
+3. **Changes in Width of PMOS & NMOS**  
 If width of PMOS & NMOS are changed then delay also changes. But this change is very minute in unloaded delay. As size increases Resistance of MOS decreases but at the same time internal capacitances increases which cancels out of size change. But this change is considerbale in case of loaded delay.
 <br>
 
@@ -217,32 +219,41 @@ Here, we can see that power consumption reduces drastically as load capacitance 
 3. **Less Switching Transitions** - An architecture should be designed in such a way that it requires less no. of switching cycles to generate a particular output.
 
 ## Layout  
-For layout Magic VLSI tool is used.
-Steps Of Layout:
-1. **Layout of PMOS**
+
+![Inverter Diagram](images/inv_step.png)
+  
+For layout Magic VLSI tool is used.  
+**Steps Of Layout:**  
+**1. Layout of PMOS**
 - Generally, the whole area is pwell (p-type), but for a PMOS substrate/body is N-type. So, firstly selecting an area and then paint with nwell.
 - A smaller area is selected and painted with pdiff for drain and source.
 - A polysilicon gate is created over the pdiff to separate drain and source.
 - Local interconnect (li) layer is placed over the drain terminal for short connections, followed by a pdiffc layer (p diffusion contact) for connection between P diffusion layer and local interconnect. Similar thing is copied towards source layer.
 
-2. **Layout of NMOS**
+**2. Layout of NMOS**
 -  As the material is already P-type so no need of Pwell here.
 -  Next, all the steps will be similar to the layout of PMOS. Just p will be replaced with n.
 
-3. **Ground & V<sub>DD</sub> Connections**
+**3. Ground & V<sub>DD</sub> Connections**  
 - For GND and V<sub>DD</sub> connection we use P & N type substrate respectively.
 - let's start with V<sub>DD</sub> connection, paint a selected area with N-type substrate over nwell.
 - Now, place the li layer over it, followed by N-substrate contact for connection between N-substrate layer and local interconnect layer (li).
 - In the similar fashion, GND connection is made just replacing the N with P.
 
-4. **Interconnections**
+**4. Interconnections**  
 - Connect the V<sub>DD</sub> with Source of PMOS and GND with Source of NMOS.
 - Connect the Drain of Both PMOS & NMOS together.
 - Extend the polysilicon layer and cover it with li layer, followed by polysilicon contact.  
 
-5. **Labels**
+**5. Labels**  
 - labels each connect with its name such as V<sub>DD</sub>, GND, V<sub>IN</sub>, V<sub>out</sub>.
 
 - Now extract the layout file to a spice file.
 
 - **It is mandatory to clear DRC(Design Rule Check) at each step.**
+
+
+![Inverter Diagram](images/inv_layout.png)
+<p align="center">
+  Figure-17 : Layout of Inverter
+</p><br>  

@@ -1,0 +1,31 @@
+** sch_path: /home/ap23_27/CMOS_INV/inv_test.sch
+**.subckt inv_test
+Vdd Vdd GND 1.8
+Vin Vin GND 3
+x2 Vdd Vout Vin GND inv_vtc
+**** begin user architecture code
+
+ .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.dc Vin 0 2 1m
+.save all
+.end
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  inv_vtc.sym # of pins=4
+** sym_path: /home/ap23_27/CMOS_INV/inv_vtc.sym
+** sch_path: /home/ap23_27/CMOS_INV/inv_vtc.sch
+.subckt inv_vtc Vdd Vout Vin GND
+*.ipin Vin
+*.ipin Vdd
+*.ipin GND
+*.opin Vout
+XM1 Vout Vin GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0 sd=0
++ mult=1 m=1
+XM2 Vout Vin Vdd Vdd sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad=0.58 as=0.58 pd=4.58 ps=4.58 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end
